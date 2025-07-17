@@ -1,0 +1,29 @@
+ {
+  "project_info": {
+    "project_number": "644152319431",
+    "project_id": "uber-eats-284ce",
+    "storage_bucket": "uber-eats-284ce.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:644152319431:android:54bce5e6cf75255b060de2",
+        "android_client_info": {
+          "package_name": "com.example.driver_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6YTgNe_TPdo1Fa_uZrJ_iJI49_dnaNOg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
