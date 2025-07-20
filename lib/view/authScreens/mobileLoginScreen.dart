@@ -131,7 +131,6 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
                 onPressed: (){
                   setState(() {
                     receiveOTPButtonPressed = true;
-
                   });
                   context.read<MobileAuthProvider>().updateMobileNumber(
                       '$selectedCountry${mobileController.text.trim()}');
@@ -209,7 +208,6 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
                   ),
                 ],)
             )
-            
           ],)
       ),
     );

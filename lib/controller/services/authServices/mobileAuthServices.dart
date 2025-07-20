@@ -14,7 +14,7 @@ import '../../provider/authProvider/mobileAuthProvider.dart';
 
 class MobileAuthServices{
   static bool checkAuthentication(BuildContext context){
-    User? user = auth.currentUser;
+    User? user = auth.currentUser; // can be managed from preference (local  storage) as to check if user is signed in or not
     if(user == null){
       Navigator.pushAndRemoveUntil(
           context,
@@ -33,7 +33,13 @@ class MobileAuthServices{
 
   static receiveOTP({required BuildContext context, required String mobileNo}) async {
     try{
-      await auth.verifyPhoneNumber(
+      Navigator.push(
+        context,
+        PageTransition(
+          child: const OTPScreen(),
+          type: PageTransitionType.rightToLeft,
+        ),);
+      /*await auth.verifyPhoneNumber(
           phoneNumber: mobileNo,
           verificationCompleted: (PhoneAuthCredential credentials){
             log(credentials.toString());
@@ -54,7 +60,7 @@ class MobileAuthServices{
           codeAutoRetrievalTimeout: (String verificationID){
 
           },
-      );
+      );*/
     } catch(e){
       log(e.toString());
       throw Exception(e);
