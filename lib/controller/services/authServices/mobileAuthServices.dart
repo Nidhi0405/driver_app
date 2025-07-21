@@ -12,57 +12,71 @@ import 'package:provider/provider.dart';
 import '../../../constant/constant.dart';
 import '../../provider/authProvider/mobileAuthProvider.dart';
 
-class MobileAuthServices{
-  static bool checkAuthentication(BuildContext context){
+class MobileAuthServices {
+  static bool checkAuthentication(BuildContext context) {
     User? user = auth.currentUser;
-    if(user == null){
+    if (user == null) {
       Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(
-              builder: (context)=> const MobileLoginScreen()),
-          (route)=> false);
+        context,
+        MaterialPageRoute(builder: (context) => const MobileLoginScreen()),
+        (route) => false,
+      );
       return false;
     }
     Navigator.pushAndRemoveUntil(
-        context,
-        MaterialPageRoute(
-            builder: (context)=> const BottomNavigationBarUberEats()),
-            (route)=> false);
+      context,
+      MaterialPageRoute(
+        builder: (context) => const BottomNavigationBarUberEats(),
+      ),
+      (route) => false,
+    );
     return true;
   }
 
-  static receiveOTP({required BuildContext context, required String mobileNo}) async {
-    try{
-      await auth.verifyPhoneNumber(
-          phoneNumber: mobileNo,
-          verificationCompleted: (PhoneAuthCredential credentials){
-            log(credentials.toString());
-          },
-          verificationFailed: (FirebaseAuthException exception){
-            log(exception.toString());
-            throw Exception(exception);
-          },
-          codeSent: (String verificationID, int? resendToken){
-            context.read<MobileAuthProvider>().updateVerificationID(verificationID);
-            Navigator.push(
-              context,
-              PageTransition(
-                child: const OTPScreen(),
-                type: PageTransitionType.rightToLeft,
-              ),);
-          },
-          codeAutoRetrievalTimeout: (String verificationID){
-
-          },
+  static receiveOTP({
+    required BuildContext context,
+    required String mobileNo,
+  }) async {
+    try {
+      Navigator.push(
+        context,
+        PageTransition(
+          child: const OTPScreen(),
+          type: PageTransitionType.rightToLeft,
+        ),
       );
-    } catch(e){
+
+      /*await auth.verifyPhoneNumber(
+        phoneNumber: mobileNo,
+        verificationCompleted: (PhoneAuthCredential credentials) {
+          log(credentials.toString());
+        },
+        verificationFailed: (FirebaseAuthException exception) {
+          log(exception.toString());
+          throw Exception(exception);
+        },
+        codeSent: (String verificationID, int? resendToken) {
+          context.read<MobileAuthProvider>().updateVerificationID(
+            verificationID,
+          );
+          Navigator.push(
+            context,
+            PageTransition(
+              child: const OTPScreen(),
+              type: PageTransitionType.rightToLeft,
+            ),
+          );
+        },
+        codeAutoRetrievalTimeout: (String verificationID) {},
+      );*/
+    } catch (e) {
       log(e.toString());
       throw Exception(e);
     }
   }
 
-  static verifyOTP({required BuildContext context, required String otp}) async{
-    try{
+  static verifyOTP({required BuildContext context, required String otp}) async {
+    try {
       AuthCredential credential = PhoneAuthProvider.credential(
         verificationId: context.read<MobileAuthProvider>().verificationID!,
         smsCode: otp,
@@ -73,11 +87,11 @@ class MobileAuthServices{
         PageTransition(
           child: const SignInLogicScreen(),
           type: PageTransitionType.rightToLeft,
-        ),);
-    }catch(e){
+        ),
+      );
+    } catch (e) {
       log(e.toString());
       throw Exception(e);
     }
   }
-
 }

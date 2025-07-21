@@ -21,19 +21,22 @@ class UberEats extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Sizer(builder: (context, _, __) {
-      return MultiProvider(
-        providers: [
-          ChangeNotifierProvider<MobileAuthProvider>(create: (_) => MobileAuthProvider(),)
-        ],
+    return Sizer(
+      builder: (context, _, __) {
+        return MultiProvider(
+          providers: [
+            ChangeNotifierProvider<MobileAuthProvider>(
+              create: (_) => MobileAuthProvider(),
+            ),
+          ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Flutter Demo',
             theme: ThemeData(),
-            home: SignInLogicScreen()),
-      );
-
-    });
+            home: SignInLogicScreen(),
+          ),
+        );
+      },
+    );
   }
 }
-

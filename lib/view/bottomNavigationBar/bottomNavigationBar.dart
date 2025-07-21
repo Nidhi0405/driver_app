@@ -12,12 +12,13 @@ class BottomNavigationBarUberEats extends StatefulWidget {
   const BottomNavigationBarUberEats({super.key});
 
   @override
-  State<BottomNavigationBarUberEats> createState() => _BottomNavigationBarState();
+  State<BottomNavigationBarUberEats> createState() =>
+      _BottomNavigationBarState();
 }
 
 class _BottomNavigationBarState extends State<BottomNavigationBarUberEats> {
-
   PersistentTabController controller = PersistentTabController(initialIndex: 0);
+
   List<Widget> _buildScreens() {
     return [
       const HomeScreen(),
@@ -74,20 +75,25 @@ class _BottomNavigationBarState extends State<BottomNavigationBarUberEats> {
       controller: controller,
       screens: _buildScreens(),
       items: _navBarsItems(),
-      handleAndroidBackButtonPress: true, // Default is true.
-      resizeToAvoidBottomInset: true, // This needs to be true if you want to move up the screen on a non-scrollable screen when keyboard appears. Default is true.
-      stateManagement: true, // Default is true.
+      handleAndroidBackButtonPress: true,
+      // Default is true.
+      resizeToAvoidBottomInset: true,
+      // This needs to be true if you want to move up the screen on a non-scrollable screen when keyboard appears. Default is true.
+      stateManagement: true,
+      // Default is true.
       hideNavigationBarWhenKeyboardAppears: true,
       //popBehaviorOnSelectedNavBarItemPress: PopActionScreensType.all,
       padding: const EdgeInsets.only(top: 8),
       backgroundColor: white,
       isVisible: true,
       animationSettings: const NavBarAnimationSettings(
-        navBarItemAnimation: ItemAnimationSettings( // Navigation Bar's items animation properties.
+        navBarItemAnimation: ItemAnimationSettings(
+          // Navigation Bar's items animation properties.
           duration: Duration(milliseconds: 400),
           curve: Curves.ease,
         ),
-        screenTransitionAnimation: ScreenTransitionAnimationSettings( // Screen transition animation on change of selected tab.
+        screenTransitionAnimation: ScreenTransitionAnimationSettings(
+          // Screen transition animation on change of selected tab.
           animateTabTransition: true,
           duration: Duration(milliseconds: 200),
           screenTransitionAnimationType: ScreenTransitionAnimationType.fadeIn,
@@ -95,8 +101,8 @@ class _BottomNavigationBarState extends State<BottomNavigationBarUberEats> {
       ),
       confineToSafeArea: true,
       navBarHeight: kBottomNavigationBarHeight,
-      navBarStyle: NavBarStyle.style6, // Choose the nav bar style with this property
+      navBarStyle:
+          NavBarStyle.style6, // Choose the nav bar style with this property
     );
-
   }
 }

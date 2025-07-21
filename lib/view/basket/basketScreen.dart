@@ -14,10 +14,7 @@ class _BasketScreenState extends State<BasketScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text(
-          "Basket Screen",
-          style: AppTextStyles.body16bold,
-        ),
+        child: Text("Basket Screen", style: AppTextStyles.body16bold),
       ),
     );
   }

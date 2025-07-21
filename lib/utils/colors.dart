@@ -26,10 +26,10 @@ Color blueAccent = Colors.blueAccent.shade100;
 //Linear Gradient Color
 List<Color> appBarGradientColor = [
   const Color(0xff82d9e3),
-  const Color(0xffa7e7cd)
+  const Color(0xffa7e7cd),
 ];
 
 List<Color> addressBarGradientColor = [
   const Color(0xffb5e7ee),
-  const Color(0xffcbf1e2)
+  const Color(0xffcbf1e2),
 ];

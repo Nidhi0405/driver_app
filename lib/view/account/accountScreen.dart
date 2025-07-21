@@ -13,7 +13,6 @@ class AccountScreen extends StatefulWidget {
 }
 
 class _AccountScreenState extends State<AccountScreen> {
-
   List account = [
     [FontAwesomeIcons.shop, "Orders"],
     [FontAwesomeIcons.heart, 'Your favourites'],
@@ -35,49 +34,44 @@ class _AccountScreenState extends State<AccountScreen> {
       child: Scaffold(
         body: ListView(
           physics: const BouncingScrollPhysics(),
-          padding: EdgeInsets.symmetric(
-              horizontal: 3.w,
-              vertical: 2.h),
+          padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 2.h),
           children: [
-            SizedBox(height: 2.h,),
+            SizedBox(height: 2.h),
             Row(
               children: [
                 CircleAvatar(
                   radius: 3.h,
                   backgroundColor: black,
                   child: CircleAvatar(
-                    radius: 3.h-2,
+                    radius: 3.h - 2,
                     backgroundColor: white,
                     child: FaIcon(
-                        FontAwesomeIcons.user,
-                        size: 3.h,
-                        color: grey,
+                      FontAwesomeIcons.user,
+                      size: 3.h,
+                      color: grey,
                     ),
                   ),
                 ),
-                SizedBox(width: 10.w,),
-                Text("User Name", style: AppTextStyles.body16,)
-              ],),
+                SizedBox(width: 10.w),
+                Text("User Name", style: AppTextStyles.body16),
+              ],
+            ),
 
-            SizedBox(height: 2.h,),
+            SizedBox(height: 2.h),
 
             ListView.builder(
-                itemCount: account.length,
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (context,index) {
-                  return ListTile(
-                      leading: FaIcon(
-                        account[index][0],
-                        size: 2.h,
-                        color: black,),
-                      title: Text(
-                          account[index][1],
-                          style: AppTextStyles.body14
-                      )
-                  );
-                })
-            ],)
+              itemCount: account.length,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) {
+                return ListTile(
+                  leading: FaIcon(account[index][0], size: 2.h, color: black),
+                  title: Text(account[index][1], style: AppTextStyles.body14),
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

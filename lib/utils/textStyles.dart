@@ -6,21 +6,21 @@ class AppTextStyles {
   static TextStyle authButtonTextStyle = TextStyle(
     fontSize: 11.sp,
     fontWeight: FontWeight.normal,
-    fontFamily: 'UberMmoveBold'
+    fontFamily: 'UberMmoveBold',
   );
 
   static TextStyle textFiledTextStyle = TextStyle(
-      fontSize: 16.sp,
-      fontWeight: FontWeight.normal,
-      fontFamily: 'UberMmoveMedium',
-      color: black,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.normal,
+    fontFamily: 'UberMmoveMedium',
+    color: black,
   );
 
   static TextStyle textFiledHintTextStyle = TextStyle(
-      fontSize: 16.sp,
-      fontWeight: FontWeight.normal,
-      fontFamily: 'UberMmoveBold',
-      color: grey,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.normal,
+    fontFamily: 'UberMmoveBold',
+    color: grey,
   );
 
   //UBER MOVE MEDIUM

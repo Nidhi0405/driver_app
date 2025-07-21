@@ -14,10 +14,7 @@ class _GroceryScreenState extends State<GroceryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text(
-          "Grocery Screen",
-          style: AppTextStyles.body16bold,
-        ),
+        child: Text("Grocery Screen", style: AppTextStyles.body16bold),
       ),
     );
   }
