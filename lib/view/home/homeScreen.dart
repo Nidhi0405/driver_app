@@ -22,6 +22,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+      //bottom: false, is set to remove space at the bottom of the screen.
+      bottom: false,
       child: Scaffold(
         body: ListView(
           padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 2.h),

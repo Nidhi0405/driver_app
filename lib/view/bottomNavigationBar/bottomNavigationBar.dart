@@ -83,7 +83,7 @@ class _BottomNavigationBarState extends State<BottomNavigationBarUberEats> {
       // Default is true.
       hideNavigationBarWhenKeyboardAppears: true,
       //popBehaviorOnSelectedNavBarItemPress: PopActionScreensType.all,
-      padding: const EdgeInsets.only(top: 8),
+      padding: const EdgeInsets.only(top: 10),
       backgroundColor: white,
       isVisible: true,
       animationSettings: const NavBarAnimationSettings(
